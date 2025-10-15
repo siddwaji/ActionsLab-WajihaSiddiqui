@@ -1,0 +1,39 @@
+name: Build and Test Pipeline - WajihaSiddiqui
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    name: Build Job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print build start message
+        run: echo "Starting build process..."
+      
+      - name: Simulate compilation
+        run: sleep 3
+      
+      - name: Print build completion
+        run: echo "Build completed successfully"
+      
+      - name: Print builder name
+        run: echo "Built by WajihaSiddiqui"
+  
+  test:
+    name: Test Job
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print test start message
+        run: echo "Running automated tests..."
+      
+      - name: Simulate test execution
+        run: sleep 2
+      
+      - name: Print current date and time
+        run: date
+      
+      - name: Print test completion
+        run: echo "All tests passed for WajihaSiddiqui"
